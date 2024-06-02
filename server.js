@@ -237,7 +237,7 @@ function getBoardState(roomId){
 }
 
 function removeUser(id){
-    GamesState.setUsers.filter(user => user.id !== id)
+    GamesState.setUsers(GamesState.setUsers.filter(user => user.id !== id))
 }
 
 function getUser(id) {
