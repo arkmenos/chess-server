@@ -44,7 +44,7 @@ const GamesState = {
 
 const io = new Server(expressServer, {
     cors: {
-        origin:  "https://chess-app-2qzc.onrender.com/",
+        origin:  "https://chess-app-2qzc.onrender.com",
         methods:["GET", "POST"],
         allowedHeaders:["Access-Control-Allow-Origin"],
         credentials: true
