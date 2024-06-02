@@ -1,8 +1,8 @@
 import express from 'express'
 import { Server, Socket } from 'socket.io'
 import cors from "cors"
-import { corsOptions } from './config/corOptions'
-import { allowedOrigins } from './config/allowedOrigins'
+import { corsOptions } from './config/corOptions.js'
+import { allowedOrigins } from './config/allowedOrigins.js'
 
 const PORT = process.env.PORT || 4000
 const ADMIN = "Admin"
