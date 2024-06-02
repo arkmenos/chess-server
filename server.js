@@ -10,7 +10,7 @@ const app = express();
 app.use((req, res, next) => {
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "https://chess-app-2qzc.onrender.com/"
+      "https://chess-app-2qzc.onrender.com"
     );
     res.setHeader(
         "Access-Control-Allow-Methods",
