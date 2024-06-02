@@ -1,12 +1,14 @@
 import express from 'express'
 import { Server, Socket } from 'socket.io'
 import cors from "cors"
+import { corsOptions } from './config/corOptions'
+import { allowedOrigins } from './config/allowedOrigins'
 
 const PORT = process.env.PORT || 4000
 const ADMIN = "Admin"
 
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 
 const expressServer = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
@@ -25,7 +27,7 @@ const GamesState = {
 
 const io = new Server(expressServer, {
     cors: {
-        origin:  "https://chess-app-2qzc.onrender.com/"
+        origin:  allowedOrigins
     }
 })
 
