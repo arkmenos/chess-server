@@ -25,7 +25,7 @@ const GamesState = {
 
 const io = new Server(expressServer, {
     cors: {
-        origin: process.env.NODE_ENV === "production" ? false : ["http://localhost:5173", "http://127.0.0.1:5173"]        
+        origin: process.env.NODE_ENV === "production" ? "https://chess-app-2qzc.onrender.com/" : ["http://localhost:5173", "http://127.0.0.1:5173"]        
     }
 })
 
@@ -160,6 +160,7 @@ io.on('connection', socket => {
 
         if(user){
             io.to(user.roomId).emit('message', buildMsg(ADMIN, `${user.name} has left the room`))
+            removeUser(socket.id)
         }
     })
 
